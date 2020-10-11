@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://medium.com/@sangeetha_venkatesan/hulu-react-is-super-fun-if-you-are-consistent-enough-to-react-towards-it-9d418a82de07
 
-## Available Scripts
+In this blog, we will see how we can build a Hulu clone(react application) with data pulled from movie DB through axios. App developed for learning and I will be sharing insights and takeaways. Seems like a lot of terms!
 
-In the project directory, you can run:
+Break it down and keep it simple on what we want to achieve component by component!
 
-### `npm start`
+A lot of small packages added in order to enhance the experience.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Functionality:
+Get the movie lists from TMDB movie Database through API
+Hover over the video card to get the information about the movie.
+Clicking on the options in navbar will fetch the movie results.
+Make the experience count by including react flip move that throws animated effect when switching navbar options.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Let's get started, 🚀
 
-### `npm test`
+Create a react application. Not going to cover these as there are endless articles. The main purpose is to document the points that are often brushed away. For a full stack like MERN build, give the names such that it clearly displays the front end and backend split.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Visualize what you are going to build and split the application into different components. Focus on one component(logic part and CSS) at a time.
 
-### `npm run build`
+Start the app by commenting on how the application page will be dissected
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The apps can look simple but rich experience can be incorporated just by understanding what it needs through CSS. Your REACT world may be bogged with styled-components and other complex styling techniques. Just sticking to attacking the elements in the corresponding CSS can take the app come along with good structure.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Naming the classNames for CSS: Loved the BEM naming convention ❤
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There are only two hard problems in Computer Science: cache invalidation and naming things — Phil Karlton
 
-### `npm run eject`
+BEM naming convention
+In the above snippet, the root component is VideoCard, the className given is videoCard(camel casing), the next child element under the component will be given vidoCard__stats.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://github.com/getbem/getbem.com — Give a star to them if they have made you disciplined in naming :)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Keep the structure clean and manageable. When adding a header, keep the react component and its CSS. Data layer(redux) and much more can be added as and when we extend the application.This allows better styling for each component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For fetching the movie results through API, used axios. Don't configure the requests URL initialization in the react component though its just one line of code. Create a separate file and configure the BASE URL instance. Further endpoints can be extended from the BASE URL instance created. This method is pure gold ❤
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I love the ES6 imports. It makes what we do look simple. I personally feel javascript is as simple when it is in ES6. Personally, I don't like using
+var axios = require(‘axios’) — It just doesn't explicitly connect with me what am doing with the package.
 
-## Learn More
+Came across this package (React-text-truncate) — wonderful for bloggers website and to show the trimmed content.
+Let's see the difference:
+Wrapping the movie overview(<p> tag in <TextTruncate>)
+Text truncate
+  
+Just pushing the information:
+<p>{movie.overview}</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Using hover over CSS styling intelligently. Just displaying the video card will all the information when the page loads will settle user with too much information. Hovering over will create a minuscule user experience to let him know the information we provide.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+react-flip-move: This creates a very smooth and seamless experience when we switch between different tabs and when the video card loads. Without the flip move, though video card load absolutely fine, but it would look like a website trying to get the data and just loads. Clever way, making apps seem faster sometimes does the trick to the user than creating faster loading apps :)
 
-### Code Splitting
+Above are little takeaways when creating the above application, hope you find it useful! Understand what the user might perceive when using the application a bit more than what the user may see! Thinking simple is the key!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+https://drive.google.com/file/d/1KXwykufEkU91bAbtnHSgRyVSuDF2zrVd/preview
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Try visualizing the current component, the complex application will come through in cohesion with small visualizations mapped.
